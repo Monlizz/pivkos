@@ -143,3 +143,16 @@ footer {
 .modal-content .btn:hover {
   background: #b23a00;
 }
+
+/* Nový styl pro Instagram ikonu */
+.instagram-icon {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  margin-top: 1em;
+}
+
+.instagram-icon:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
