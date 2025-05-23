@@ -14,10 +14,16 @@
   <div class="container">
     <h1>🍺 Vítej na mé stránce!</h1>
     <p>Jsem <strong>profi výčepní</strong></p>
-    <button id="openModal" class="btn">Kontaktuj mě</button>
+
+    <!-- Instagram ikona místo tlačítka -->
+    <a href="https://www.instagram.com/prodavamfent" target="_blank" rel="noopener noreferrer" class="instagram-icon" aria-label="Instagram profil prodavamfent">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#f5a623" viewBox="0 0 24 24" >
+        <path d="M7.75 2h8.5C19.99 2 22 4.01 22 6.75v8.5c0 2.74-2.01 4.75-5.75 4.75h-8.5C4.01 20 2 17.99 2 15.25v-8.5C2 4.01 4.01 2 7.75 2zm0 2C5.68 4 4 5.68 4 7.75v8.5C4 18.32 5.68 20 7.75 20h8.5c2.07 0 3.75-1.68 3.75-3.75v-8.5C20 5.68 18.32 4 16.25 4h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm4.75-.75a1.25 1.25 0 112.5 0 1.25 1.25 0 01-2.5 0z"/>
+      </svg>
+    </a>
   </div>
 
-  <!-- Modal -->
+  <!-- Modal zůstal pro případ, že chceš použít později -->
   <div id="modal" class="modal-overlay hidden">
     <div class="modal-content">
       <h2>Kontaktuj mě</h2>
@@ -47,14 +53,9 @@
       }
     }, { once: true });
 
-    // Modal ovládání
-    const openModalBtn = document.getElementById('openModal');
+    // Modal ovládání (pokud ho chceš používat dál)
     const closeModalBtn = document.getElementById('closeModal');
     const modal = document.getElementById('modal');
-
-    openModalBtn.addEventListener('click', () => {
-      modal.classList.remove('hidden');
-    });
 
     closeModalBtn.addEventListener('click', () => {
       modal.classList.add('hidden');
