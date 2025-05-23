@@ -1,14 +1,15 @@
-document.addEventListener("mousemove", (e) => {
-  const x = e.clientX / window.innerWidth;
-  const y = e.clientY / window.innerHeight;
+// gradient.js
 
-  const offsetX = (x - 0.5) * 100;
-  const offsetY = (y - 0.5) * 100;
+const grid = document.querySelector('.parallax-grid');
 
-  const grid = document.querySelector(".parallax-grid");
-  if (grid) {
-    grid.style.backgroundPosition = `${offsetX}px ${offsetY}px`;
-    grid.style.setProperty('--mouse-x', `${e.clientX}px`);
-    grid.style.setProperty('--mouse-y', `${e.clientY}px`);
-  }
+window.addEventListener('mousemove', (e) => {
+  const x = e.clientX / window.innerWidth - 0.5;  // od -0.5 do 0.5
+  const y = e.clientY / window.innerHeight - 0.5;
+
+  // posuň a zvětši grid podle pozice myši, přidej glow efekt
+  const translateX = x * 30;
+  const translateY = y * 30;
+  const scale = 1 + Math.sqrt(x * x + y * y) * 0.5;
+
+  grid.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
 });
