@@ -10,6 +10,22 @@
     .hidden-audio {
       display: none;
     }
+
+    /* Styling pro kontaktní sekci */
+    #kontakt {
+      margin-top: 100vh; /* aby byla dole na stránce */
+      padding: 40px;
+      background: #111;
+      color: #eee;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      border-top: 2px solid #555;
+    }
+
+    /* Plynulý scroll na #kontakt */
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 <body>
@@ -20,8 +36,15 @@
   <div class="container">
     <h1>🍺 Vítej na mé stránce!</h1>
     <p>Jsem <strong>profi výčepní</strong></p>
-    <a href="kontakt.html" class="btn">Kontaktuj mě</a>
+    <a href="#kontakt" class="btn">Kontaktuj mě</a>
   </div>
+
+  <!-- Kontaktní sekce -->
+  <section id="kontakt">
+    <h2>Kontaktuj mě</h2>
+    <p>Najdeš mě na Instagramu:</p>
+    <p style="font-size: 2rem;">🍺 <strong>@prodavamfent</strong></p>
+  </section>
 
   <!-- Audio autoplay (start muted) -->
   <audio id="bg-music" autoplay muted loop class="hidden-audio">
@@ -36,7 +59,7 @@
   <script src="gradient.js"></script>
   <script src="beer.js"></script>
   <script>
-    // Odblokuj zvuk po první interakci
+    // Odblokuj zvuk po první interakci (kliknutí)
     document.addEventListener('click', () => {
       const audio = document.getElementById('bg-music');
       audio.muted = false;
