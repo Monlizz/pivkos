@@ -1,20 +1,19 @@
-/* style.css */
-
+/* Reset a základ */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: #111;
-  color: white;
+  background: #121212;
   font-family: 'Poppins', sans-serif;
+  color: #eee;
   overflow-x: hidden;
 }
 
-/* Parallax grid background */
+/* Parallax grid */
 .parallax-grid {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: 
+  background:
     linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: 50px 50px;
@@ -23,86 +22,97 @@ body, html {
   transition: transform 0.3s ease;
 }
 
-/* Beer bubbles background */
+/* Beer bubbles container */
 .beer-background {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: radial-gradient(circle at center, #f5a623 0%, #b87304 80%);
-  opacity: 0.15;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
+  overflow: hidden;
 }
 
-/* Container with content */
+/* Container s hlavním obsahem */
 .container {
   position: relative;
   z-index: 10;
+  padding: 80px 20px 40px;
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
-  padding: 50px 20px;
-  color: white;
 }
 
-/* Main heading */
 .container h1 {
-  font-weight: 600;
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 3.5rem;
+  margin-bottom: 0.2em;
+  text-shadow: 0 0 10px #f5a623;
 }
 
-/* Paragraph inside container */
 .container p {
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+  margin-bottom: 1.2em;
+  text-shadow: 0 0 6px #f5a623aa;
 }
 
-/* Button styling */
+/* Styl tlačítka */
 .btn {
-  display: inline-block;
-  padding: 12px 30px;
-  margin-top: 20px;
   background: #f5a623;
-  color: #111;
+  color: #121212;
   font-weight: 600;
-  border-radius: 8px;
   text-decoration: none;
-  box-shadow: 0 0 10px #f5a623aa;
+  padding: 15px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #f5a623cc;
+  display: inline-block;
   transition: background-color 0.3s ease, color 0.3s ease;
   cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #e59419;
+  background: #d48f0e;
   color: #fff;
+  box-shadow: 0 0 25px #d48f0eff;
 }
 
-/* Kontaktní sekce */
+/* Sekce kontakt */
 #kontakt {
-  margin-top: 100vh;
-  padding: 40px;
-  background: #111;
-  color: #eee;
-  font-family: 'Poppins', sans-serif;
+  margin-top: 120vh;
+  padding: 60px 20px;
+  background: #181818;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 12px;
   text-align: center;
-  border-top: 2px solid #555;
+  box-shadow: 0 0 20px #f5a62388;
+}
+
+#kontakt h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0.5em;
+  color: #f5a623;
+  text-shadow: 0 0 10px #f5a623bb;
+}
+
+#kontakt p {
+  font-size: 1.3rem;
+  margin: 10px 0;
+  color: #eee;
 }
 
 /* Footer */
 footer {
   position: relative;
   z-index: 10;
+  padding: 20px 10px;
   text-align: center;
-  padding: 15px 10px;
   font-size: 0.9rem;
-  color: #666;
-  background: #000;
+  color: #555;
 }
 
 /* Skryté audio */
 .hidden-audio {
   display: none;
-}
-
-/* Plynulý scroll */
-html {
-  scroll-behavior: smooth;
 }
