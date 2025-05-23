@@ -14,14 +14,18 @@
   <div class="container">
     <h1>🍺 Vítej na mé stránce!</h1>
     <p>Jsem <strong>profi výčepní</strong></p>
-    <a href="#kontakt" class="btn">Kontaktuj mě</a>
+    <button id="openModal" class="btn">Kontaktuj mě</button>
   </div>
 
-  <section id="kontakt">
-    <h2>Kontaktuj mě</h2>
-    <p>Najdeš mě na Instagramu:</p>
-    <p style="font-size: 2rem;">🍺 <strong>@prodavamfent</strong></p>
-  </section>
+  <!-- Modal -->
+  <div id="modal" class="modal-overlay hidden">
+    <div class="modal-content">
+      <h2>Kontaktuj mě</h2>
+      <p>Najdeš mě na Instagramu:</p>
+      <p style="font-size: 2rem;">🍺 <strong>@prodavamfent</strong></p>
+      <button id="closeModal" class="btn" style="background:#d44800; margin-top: 20px;">Zavřít</button>
+    </div>
+  </div>
 
   <audio id="bg-music" autoplay muted loop class="hidden-audio">
     <source src="zkure.mp3" type="audio/mpeg" />
@@ -42,6 +46,26 @@
         audio.play();
       }
     }, { once: true });
+
+    // Modal ovládání
+    const openModalBtn = document.getElementById('openModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const modal = document.getElementById('modal');
+
+    openModalBtn.addEventListener('click', () => {
+      modal.classList.remove('hidden');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+
+    // Kliknutí mimo modal content zavře okno
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.add('hidden');
+      }
+    });
   </script>
 </body>
 </html>
