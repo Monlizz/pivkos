@@ -46,7 +46,13 @@
   <script src="beer.js"></script>
   <script>
 
-
+  document.addEventListener('click', () => {
+    const audio = document.getElementById('bg-music');
+    if (audio.muted) {
+      audio.muted = false;
+      audio.play();
+  }
+}, { once: true });
     // Modal ovládání (pokud ho chceš používat dál)
     const closeModalBtn = document.getElementById('closeModal');
     const modal = document.getElementById('modal');
