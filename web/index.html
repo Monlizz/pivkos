@@ -6,6 +6,15 @@
   <title>Pivní Stránka 🍺</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .spotify-player {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+  </style>
 </head>
 <body>
   <div class="parallax-grid"></div>
@@ -18,6 +27,11 @@
     <a href="kontakt.html" class="btn">Kontaktuj mě</a>
   </div>
 
+  <!-- Spotify player -->
+  <div class="spotify-player">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4yqKQTqexdBqbzr7l6qHf5?utm_source=generator" width="300" height="80" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+
   <footer>
     <p>&copy; 2025 Kryštof. Všechna piva vyhrazena.</p>
   </footer>
@@ -25,4 +39,4 @@
   <script src="gradient.js"></script>
   <script src="beer.js"></script>
 </body>
-</html>
+<
