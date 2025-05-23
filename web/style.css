@@ -1,0 +1,144 @@
+/* Reset & základ */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0d0d0d;
+  color: #e0e0e0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.parallax-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image:
+    linear-gradient(#1f1f1f 1px, transparent 1px),
+    linear-gradient(90deg, #1f1f1f 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 0;
+  pointer-events: none;
+  transition: background-position 0.1s, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: visible;
+  transform-origin: center center;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.1));
+}
+
+.parallax-grid:hover {
+  transform: scale(1.1) translateZ(20px);
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+  cursor: default;
+}
+
+.parallax-grid::before {
+  content: "";
+  position: fixed;
+  top: var(--mouse-y, 50%);
+  left: var(--mouse-x, 50%);
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 50px 20px rgba(255, 255, 255, 0.5);
+  transition: top 0.1s ease, left 0.1s ease;
+  z-index: 1;
+}
+
+.container {
+  text-align: center;
+  max-width: 600px;
+  padding: 40px;
+  background-color: rgba(30, 30, 30, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  position: relative;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  color: #cccccc;
+}
+
+.btn {
+  display: inline-block;
+  background: #ffffff;
+  color: #121212;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.btn:hover {
+  background: #333333;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+}
+
+footer {
+  position: absolute;
+  bottom: 15px;
+  font-size: 0.8em;
+  color: #777;
+  z-index: 10;
+}
+
+.insta-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+}
+
+.insta-user {
+  margin-top: 15px;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #e0e0e0;
+}
+
+/* Pivní pozadí */
+
+.beer-background {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Pivo emoji (animace definována v beer.js) */
+.beer-emoji {
+  position: fixed;
+  font-size: 24px;
+  user-select: none;
+  will-change: transform, opacity;
+  pointer-events: none;
+  text-shadow:
+    0 0 5px rgba(255, 255, 255, 0.6),
+    0 0 10px rgba(255, 255, 255, 0.4);
+}
