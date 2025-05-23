@@ -1,58 +1,37 @@
-const beerCount = 25;
-const beerEmojis = [];
-const beerBackground = document.querySelector(".beer-background");
+// beer.js
 
-function randomRange(min, max) {
-  return Math.random() * (max - min) + min;
-}
+const beerBackground = document.querySelector('.beer-background');
 
-class Beer {
-  constructor() {
-    this.el = document.createElement("span");
-    this.el.classList.add("beer-emoji");
-    this.el.textContent = "🍺";
-    beerBackground.appendChild(this.el);
+function createBeerEmoji() {
+  const beer = document.createElement('div');
+  beer.textContent = '🍺';
+  beer.style.position = 'absolute';
+  beer.style.fontSize = `${Math.random() * 24 + 16}px`; // 16-40 px
+  beer.style.left = `${Math.random() * 100}%`;
+  beer.style.top = `100%`; // začne dole
+  beer.style.opacity = Math.random() * 0.6 + 0.4;
+  beer.style.pointerEvents = 'none';
+  beer.style.userSelect = 'none';
+  beer.style.willChange = 'transform, opacity';
 
-    this.x = randomRange(0, window.innerWidth);
-    this.y = randomRange(0, window.innerHeight);
+  beerBackground.appendChild(beer);
 
-    this.speedX = randomRange(-0.3, 0.3);
-    this.speedY = randomRange(-0.2, 0.2);
+  const duration = 8000 + Math.random() * 6000; // 8-14 sekund
+  const startTime = performance.now();
 
-    this.size = randomRange(16, 30);
-    this.el.style.fontSize = this.size + "px";
-
-    this.opacity = randomRange(0.5, 1);
-    this.el.style.opacity = this.opacity;
+  function animate(time) {
+    const elapsed = time - startTime;
+    const progress = elapsed / duration;
+    if (progress < 1) {
+      beer.style.transform = `translateY(${-progress * 120}vh) translateX(${Math.sin(progress * 10) * 5}px) scale(${1 + progress * 0.3})`;
+      beer.style.opacity = 1 - progress;
+      requestAnimationFrame(animate);
+    } else {
+      beer.remove();
+    }
   }
-
-  update() {
-    this.x += this.speedX;
-    this.y += this.speedY;
-
-    // Okraje obrazovky - pivka se odrazí
-    if (this.x < 0 || this.x > window.innerWidth) this.speedX *= -1;
-    if (this.y < 0 || this.y > window.innerHeight) this.speedY *= -1;
-
-    this.el.style.transform = `translate(${this.x}px, ${this.y}px)`;
-  }
+  requestAnimationFrame(animate);
 }
 
-for(let i = 0; i < beerCount; i++) {
-  beerEmojis.push(new Beer());
-}
-
-function animateBeers() {
-  beerEmojis.forEach(beer => beer.update());
-  requestAnimationFrame(animateBeers);
-}
-
-animateBeers();
-
-window.addEventListener('resize', () => {
-  beerEmojis.forEach(beer => {
-    // Po resize se pivka přizpůsobí velikosti obrazovky
-    beer.x = Math.min(beer.x, window.innerWidth);
-    beer.y = Math.min(beer.y, window.innerHeight);
-  });
-});
+// Generuj pivka pravidelně
+setInterval(createBeerEmoji, 500);
