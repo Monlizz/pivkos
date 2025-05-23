@@ -42,16 +42,22 @@ body, html {
 }
 
 .container h1 {
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 3.5rem;
-  margin-bottom: 0.2em;
-  text-shadow: 0 0 10px #f5a623;
+  font-size: 3.8rem;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+  text-shadow: 0 0 12px #f5a623cc;
+  letter-spacing: 1px;
 }
 
 .container p {
+  font-family: 'Poppins', sans-serif;
   font-weight: 300;
   font-size: 1.4rem;
   margin-bottom: 1.2em;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
   text-shadow: 0 0 6px #f5a623aa;
 }
 
@@ -59,6 +65,7 @@ body, html {
 .btn {
   background: #f5a623;
   color: #121212;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   text-decoration: none;
   padding: 15px 40px;
@@ -74,34 +81,6 @@ body, html {
   background: #d48f0e;
   color: #fff;
   box-shadow: 0 0 25px #d48f0eff;
-}
-
-/* Sekce kontakt */
-/* Už nepoužíváme #kontakt jako sekci, takže můžeš tohle vymazat, nebo ponechat pro případ, že chceš použít */
-#kontakt {
-  margin-top: 120vh;
-  padding: 60px 20px;
-  background: #181818;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 0 20px #f5a62388;
-}
-
-#kontakt h2 {
-  font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 0.5em;
-  color: #f5a623;
-  text-shadow: 0 0 10px #f5a623bb;
-}
-
-#kontakt p {
-  font-size: 1.3rem;
-  margin: 10px 0;
-  color: #eee;
 }
 
 /* Footer */
@@ -148,6 +127,16 @@ footer {
   max-width: 400px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
+}
+
+/* Modal nadpis */
+.modal-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 0.4em;
+  text-shadow: 0 0 12px #f5a623cc;
+  letter-spacing: 1px;
 }
 
 /* Modal tlačítka */
