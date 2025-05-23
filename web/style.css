@@ -1,15 +1,13 @@
-/* Reset a základ */
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
   background: #121212;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #eee;
   overflow-x: hidden;
 }
 
-/* Parallax grid */
 .parallax-grid {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -22,7 +20,6 @@ body, html {
   transition: transform 0.3s ease;
 }
 
-/* Beer bubbles container */
 .beer-background {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -31,7 +28,6 @@ body, html {
   overflow: hidden;
 }
 
-/* Container s hlavním obsahem */
 .container {
   position: relative;
   z-index: 10;
@@ -42,17 +38,17 @@ body, html {
 }
 
 .container h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 3.8rem;
   line-height: 1.1;
   margin-bottom: 0.5em;
-  text-shadow: 0 0 12px #f5a623cc;
-  letter-spacing: 1px;
+  text-shadow: 0 0 10px #f5a623cc;
+  letter-spacing: 1.5px;
 }
 
 .container p {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 300;
   font-size: 1.4rem;
   margin-bottom: 1.2em;
@@ -61,12 +57,11 @@ body, html {
   text-shadow: 0 0 6px #f5a623aa;
 }
 
-/* Styl tlačítka */
 .btn {
   background: #f5a623;
   color: #121212;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   text-decoration: none;
   padding: 15px 40px;
   border-radius: 12px;
@@ -83,7 +78,6 @@ body, html {
   box-shadow: 0 0 25px #d48f0eff;
 }
 
-/* Footer */
 footer {
   position: relative;
   z-index: 10;
@@ -93,14 +87,10 @@ footer {
   color: #555;
 }
 
-/* Skryté audio */
 .hidden-audio {
   display: none;
 }
 
-/* --- MODAL --- */
-
-/* Modal overlay - celá obrazovka, poloprůhledná černá */
 .modal-overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -108,16 +98,14 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* nad vším */
+  z-index: 1000;
   transition: opacity 0.3s ease;
 }
 
-/* Skrytý modal */
 .hidden {
   display: none;
 }
 
-/* Vlastní obsah modalu */
 .modal-content {
   background: #222;
   padding: 30px 40px;
@@ -126,24 +114,22 @@ footer {
   color: #eee;
   max-width: 400px;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Modal nadpis */
 .modal-content h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 2.8rem;
   margin-bottom: 0.4em;
-  text-shadow: 0 0 12px #f5a623cc;
-  letter-spacing: 1px;
+  text-shadow: 0 0 10px #f5a623cc;
+  letter-spacing: 1.5px;
 }
 
-/* Modal tlačítka */
 .modal-content .btn {
   width: 100%;
   padding: 12px 0;
-  font-weight: 600;
+  font-weight: 400;
   border-radius: 10px;
   box-shadow: 0 0 15px #d44800cc;
   cursor: pointer;
