@@ -23,9 +23,9 @@
     <a href="kontakt.html" class="btn">Kontaktuj mě</a>
   </div>
 
-  <!-- Audio autoplay -->
-  <audio autoplay loop class="hidden-audio">
-    <source src="SpotiDownloader.com - Zkuře - OG PAV.mp3" type="audio/mpeg" />
+  <!-- Audio autoplay (start muted) -->
+  <audio id="bg-music" autoplay muted loop class="hidden-audio">
+    <source src="zkure.mp3" type="audio/mpeg" />
     Tvůj prohlížeč nepodporuje přehrávání zvuku.
   </audio>
 
@@ -35,5 +35,13 @@
 
   <script src="gradient.js"></script>
   <script src="beer.js"></script>
+  <script>
+    // Odblokuj zvuk po první interakci
+    document.addEventListener('click', () => {
+      const audio = document.getElementById('bg-music');
+      audio.muted = false;
+      audio.play();
+    }, { once: true });
+  </script>
 </body>
 </html>
