@@ -165,16 +165,19 @@ footer {
   transform: translateX(-50%);
   background: #f5a623;
   border: none;
-  padding: 10px 50px;
+  padding: 10px 30px; /* upraveno, menší padding na šířku */
   border-radius: 50px;
   cursor: pointer;
   box-shadow: 0 0 15px #f5a623cc;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: auto; /* aby se nezvětšoval podle obsahu */
+  min-width: 150px; /* fixní minimální šířka pro hezčí vzhled */
   transition: background-color 0.3s ease;
   z-index: 20;
 }
+
 
 #scrollDownBtn:hover {
   background: #d48f0e;
