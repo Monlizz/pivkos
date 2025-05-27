@@ -17,8 +17,10 @@ body, html {
   background-size: 50px 50px;
   pointer-events: none;
   z-index: 1;
-  transition: transform 0.3s ease;
+  /* transition: transform 0.3s ease;  <-- TOTO SMAZAT */
+  will-change: transform, filter;
 }
+
 
 .beer-background {
   position: fixed;
