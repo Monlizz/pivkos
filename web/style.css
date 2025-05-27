@@ -348,3 +348,22 @@ footer {
     right: auto;  /* zajistí, že levá pozice má přednost */
   }
 }
+/* Skryje defaultní kurzor */
+body {
+  cursor: none;
+}
+
+/* Custom kurzor: malá tečka s glowem */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: #f5a623;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 8px #f5a623aa;
+  transition: transform 0.05s linear;
+}
