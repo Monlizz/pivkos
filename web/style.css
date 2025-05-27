@@ -340,3 +340,11 @@ footer {
     bottom: 90px; /* Zvednuto oproti defaultním 20px */
   }
 }
+@media (max-width: 768px) {
+  .audio-player {
+    bottom: 90px; /* posun výš kvůli tlačítku */
+    left: 50%;    /* zarovnání do středu */
+    transform: translateX(-50%);
+    right: auto;  /* zajistí, že levá pozice má přednost */
+  }
+}
