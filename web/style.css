@@ -335,3 +335,8 @@ footer {
   text-align: center;
   user-select: none;
 }
+@media (max-width: 768px) {
+  .audio-player {
+    bottom: 90px; /* Zvednuto oproti defaultním 20px */
+  }
+}
