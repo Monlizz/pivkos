@@ -365,5 +365,6 @@ body {
   pointer-events: none;
   z-index: 9999;
   box-shadow: 0 0 8px #f5a623aa;
-  transition: transform 0.05s linear;
+  /* Odebráno: transition: transform 0.05s linear; */
 }
+
